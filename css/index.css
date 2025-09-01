@@ -1,6 +1,27 @@
-.enlace-verde {
-    color: #2E8B57;
+a {
+    color: #2E8B57 !important;
 }
 body {
     background-color: #F7F7F7;
+}
+h1 {
+    color: #8B4513;
+}
+.enlace-verde:hover {
+    color: #1C6B3A;
+}
+a {
+    text-decoration: none;
+}
+.navbar .nav{
+    align-items: center;
+}
+
+.logo-imagen{
+ height: 200px; 
+  width: auto ;
+    display: block;
+}
+h3{
+    color: #8B4513;;
 }
