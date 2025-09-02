@@ -21,7 +21,10 @@ a {
  height: 200px; 
   width: auto ;
     display: block;
+<<<<<<< HEAD
 }
 h3{
-    color: #8B4513;;
+    color: #8B4513;
+=======
+>>>>>>> b6520f52851357e11db37ac44098e8f08c684beb
 }
