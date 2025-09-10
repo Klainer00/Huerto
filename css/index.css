@@ -1,27 +1,38 @@
-a {
-    color: #2E8B57 !important;
-}
-body {
-    background-color: #F7F7F7;
-}
-h1 {
-    color: #8B4513;
-}
-.enlace-verde:hover {
-    color: #1C6B3A;
-}
-a {
-    text-decoration: none;
-}
-.navbar .nav{
-    align-items: center;
+:root {
+    --accent-green: #2E8B57;
+    --accent-brown: #8B4513;
+    --font-header: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
 }
 
-.logo-imagen{
- height: 200px; 
-  width: auto ;
-    display: block;
+body {
+    font-family: var(--font-body);
 }
-h3{
-    color: #8B4513;
+
+h1, h2, h3, h4, h5, h6, .logo {
+    font-family: var(--font-header);
+}
+
+.logo {
+    color: var(--accent-brown) !important;
+}
+
+.logo-img {
+    height: 40px;
+}
+
+.price {
+    color: var(--accent-green);
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=2070&auto=format&fit=crop') no-repeat center center;
+    background-size: cover;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
 }
