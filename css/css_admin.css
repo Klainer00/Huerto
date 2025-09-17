@@ -1,0 +1,9 @@
+.main-content {
+    background-color: #f0f8ff; 
+    min-height: 100vh;
+}
+.sidebar {
+    background-color: #343a40; 
+    min-height: 100vh;
+    padding-top: 1rem;
+}
