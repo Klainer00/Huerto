@@ -1,0 +1,54 @@
+{
+  "productos": [
+    {
+      "codigo": "FR001",
+      "nombre": "Manzanas Fuji",
+      "descripcion": "Manzanas Fuji crujientes y dulces, cultivadas en el Valle del Maule.",
+      "precio": 1200,
+      "stock": 150,
+      "stock_critico": 20,
+      "categoria": "Frutas Frescas",
+      "imagen": "../img/manzanaFuji.png"
+    },
+    {
+      "codigo": "FR002",
+      "nombre": "Naranjas Valencia",
+      "descripcion": "Jugosas y ricas en vitamina C, ideales para zumos frescos.",
+      "precio": 1000,
+      "stock": 200,
+      "stock_critico": 30,
+      "categoria": "Frutas Frescas",
+      "imagen": "../img/naranja_valencia.png"
+    },
+    {
+      "codigo": "VR001",
+      "nombre": "Zanahorias Orgánicas",
+      "descripcion": "Zanahorias crujientes cultivadas sin pesticidas.",
+      "precio": 900,
+      "stock": 100,
+      "stock_critico": 15,
+      "categoria": "Verduras Orgánicas",
+      "imagen": "../img/zanahorias.png"
+    },
+    {
+      "codigo": "PO001",
+      "nombre": "Miel Orgánica",
+      "descripcion": "Miel pura y orgánica producida por apicultores locales.",
+      "precio": 5000,
+      "stock": 50,
+      "stock_critico": 10,
+      "categoria": "Productos Orgánicos",
+      "imagen": "../img/miel.png"
+    },
+    {
+      "codigo": "PL001",
+      "nombre": "Leche Entera",
+      "descripcion": "Leche fresca de granjas locales.",
+      "precio": 1100,
+      "stock": 60,
+      "stock_critico": 10,
+      "categoria": "Productos Lácteos",
+      "imagen": "../img/leche.png"
+    }
+  ]
+}

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< Updated upstream
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -14,4 +15,194 @@
 <body>
     
 </body>
+=======
+    <title>Home Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/css_admin.css">
+     </head>
+
+<body>
+
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Panel Admin</a>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block navbar-dark bg-dark shadow sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Usuarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="producto.html">Productos</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Gestión de Usuarios</h1>
+                    <button type="button" class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalAgregarUsuario">
+                        + Agregar Nuevo Usuario
+                    </button>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover table-sm">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Rut</th>
+                                <th>Nombre</th>
+                                <th>Email</th>
+                                <th>Rol</th>
+                                <th>Correo</th>
+                                <th>Region</th>
+                                <th>Comuna</th>
+                                <th>Direccion</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-usuarios">
+                            </tbody>
+                    </table>
+                </div>
+                
+                <nav>
+                    <ul class="pagination justify-content-center" id="paginacion"></ul>
+                </nav>
+            </main>
+        </div>
+    </div>
+    <div class="modal fade" id="modalAgregarUsuario" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Agregar Nuevo Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formAgregarUsuario" novalidate>
+                        <div class="mb-3">
+                            <label for="rut" class="form-label">RUT:</label>
+                            <input type="text" class="form-control" id="rut" required minlength="7" maxlength="9" onkeyup="checkRut(this)">
+                        </div>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="nombre" required maxlength="50">
+                        </div>
+                        <div class="mb-3">
+                            <label for="apellido" class="form-label">Apellidos:</label>
+                            <input type="text" class="form-control" id="apellido" required maxlength="100">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email:</label>
+                            <input type="email" class="form-control" id="email" required maxlength="100">
+                        </div>
+                        <div class="mb-3">
+                            <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento:</label>
+                            <input type="date" class="form-control" id="fecha_nacimiento">
+                        </div>
+                        <div class="mb-3">
+                            <label for="direccion" class="form-label">Dirección:</label>
+                            <input type="text" class="form-control" id="direccion" required maxlength="300">
+                        </div>
+                        <div class="mb-3">
+                            <label for="region" class="form-label">Región:</label>
+                            <select class="form-select" id="region" required></select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="comuna" class="form-label">Comuna:</label>
+                            <select class="form-select" id="comuna" required></select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="rol" class="form-label">Tipo de Usuario:</label>
+                            <select class="form-select" id="rol" required>
+                                <option value="Administrador">Administrador</option>
+                                <option value="Cliente" selected>Cliente</option>
+                                <option value="Vendedor">Vendedor</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" id="btn-guardar-nuevo" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalEditarUsuario" tabindex="-1">
+         <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formEditarUsuario">
+                        <input type="hidden" id="edit-id">
+                        <div class="mb-3">
+                            <label for="edit-rut" class="form-label">RUT:</label>
+                            <input type="text" class="form-control" id="edit-rut" required minlength="7" maxlength="9" onkeyup="checkRut(this)">
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-nombre" class="form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="edit-nombre" required maxlength="50">
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-apellido" class="form-label">Apellidos:</label>
+                            <input type="text" class="form-control" id="edit-apellido" required maxlength="100">
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-email" class="form-label">Email:</label>
+                            <input type="email" class="form-control" id="edit-email" required maxlength="100">
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-fecha_nacimiento" class="form-label">Fecha de Nacimiento:</label>
+                            <input type="date" class="form-control" id="edit-fecha_nacimiento">
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-direccion" class="form-label">Dirección:</label>
+                            <input type="text" class="form-control" id="edit-direccion" required maxlength="300">
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-region" class="form-label">Región:</label>
+                            <select class="form-select" id="edit-region" required></select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-comuna" class="form-label">Comuna:</label>
+                            <select class="form-select" id="edit-comuna" required></select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-rol" class="form-label">Tipo de Usuario:</label>
+                            <select class="form-select" id="edit-rol" required>
+                                <option value="Administrador">Administrador</option>
+                                <option value="Cliente">Cliente</option>
+                                <option value="Vendedor">Vendedor</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" id="btn-guardar-cambios" class="btn btn-primary">Guardar Cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/regiones-comunas.js"></script>
+    <script src="js/checkrut.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/usuarios.js"></script>
+    </body>
+>>>>>>> Stashed changes
 </html>
