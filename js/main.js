@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const products = [
-        { id: 'FR001', name: 'Manzanas Fuji', price: 1200, image: 'img/manzanaFuji.jpg', stock: 150 },
-        { id: 'FR003', name: 'Plátanos Cavendish', price: 800, image: 'img/platano_caverdish.jpg', stock: 250 },
-        { id: 'VR001', name: 'Zanahorias Orgánicas', price: 900, image: 'img/zanahorias.jpg', stock: 100 },
-        { id: 'VR003', name: 'Pimientos Tricolores', price: 1500, image: 'img/pimienton.jpg', stock: 120 },
-        { id: 'PO003', name: 'Quinua Orgánica', price: 1500, image: 'img/quinua.jpg', stock: 0 },
-        { id: 'PL001', name: 'Leche Entera', price: 1000, image: 'img/leche.jpg', stock: 50 }
+        { id: 'FR001', name: 'Manzanas Fuji', price: 1200, image: 'img/manzanaFuji.png', stock: 150 },
+        { id: 'FR003', name: 'Plátanos Cavendish', price: 800, image: 'img/platano_caverdish.png', stock: 250 },
+        { id: 'VR001', name: 'Zanahorias Orgánicas', price: 900, image: 'img/zanahorias.png', stock: 100 },
+        { id: 'VR003', name: 'Pimientos Tricolores', price: 1500, image: 'img/pimienton.png', stock: 120 },
+        { id: 'PO003', name: 'Quinua Orgánica', price: 1500, image: 'img/quinua.png', stock: 0 },
+        { id: 'PL001', name: 'Leche Entera', price: 1000, image: 'img/leche.png', stock: 50 }
     ];
 
     let cart = JSON.parse(localStorage.getItem('huertoHogarCart')) || [];
@@ -72,21 +72,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // --- VALIDACIÓN DE FORMULARIOS CON BOOTSTRAP ---
-    const forms = document.querySelectorAll('.needs-validation');
-    Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-            if (!form.checkValidity()) {
-                event.preventDefault();
-                event.stopPropagation();
-            }
-
-            // Aquí puedes añadir tu lógica de validación personalizada adicional si es necesario
-            // Por ejemplo, la validación de dominio de correo
-            
-            form.classList.add('was-validated');
-        }, false);
-    });
-
     updateCartCount();
 });
