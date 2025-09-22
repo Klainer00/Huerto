@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalAgregar = new bootstrap.Modal(document.getElementById('modalAgregarProducto'));
 
     function cargarProductos() {
-        fetch('data/productos.json')
+        fetch('../data/productos.json')
             .then(response => response.json())
             .then(data => {
                 datosJSON = data;
