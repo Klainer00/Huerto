@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function addToCart(productId) {
         const product = products.find(p => p.id === productId);
         if (!product || product.stock === 0) {
-            alert('Producto no disponible o sin stock.');
+            showToast('Producto no disponible o sin stock.');
             return;
         }
         const cartItem = cart.find(item => item.id === productId);
@@ -34,13 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (cartItem.quantity < product.stock) {
                 cartItem.quantity++;
             } else {
-                alert('No puedes añadir más unidades (stock máximo alcanzado).');
+                showToast('No puedes añadir más unidades (stock máximo alcanzado).');
             }
         } else {
             cart.push({ id: productId, name: product.name, price: product.price, image: product.image, quantity: 1 });
         }
         saveCart();
-        alert(`${product.name} ha sido añadido al carrito.`);
+        showToast(`${product.name} ha sido añadido al carrito`);
     }
 
     const productListContainer = document.getElementById('product-list');
