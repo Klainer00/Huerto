@@ -94,6 +94,71 @@
         </section>
     </main>
 
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const botones = document.querySelectorAll(".add-to-cart");
+    const cartCount = document.getElementById("cart-count");
+
+    function actualizarContador() {
+        const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        cartCount.textContent = carrito.length;
+    }
+
+    actualizarContador();
+
+    botones.forEach(btn => {
+        btn.addEventListener("click", () => {
+        const card = btn.closest(".card");
+        const nombre = card.querySelector(".card-title").textContent;
+        const precioTexto = card.querySelector(".price").textContent.replace(/\D/g,'');
+        const precio = parseInt(precioTexto);
+        const img = card.querySelector("img").src;
+
+        const producto = { nombre, precio, cantidad: 1, img };
+
+        const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        carrito.push(producto);
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+
+        actualizarContador();
+        });
+    });
+    });
+    </script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const botones = document.querySelectorAll(".add-to-cart");
+    const cartCount = document.getElementById("cart-count");
+
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    cartCount.textContent = carrito.length;
+
+    botones.forEach(btn => {
+        btn.addEventListener("click", () => {
+        const card = btn.closest(".card");
+        const nombre = card.querySelector(".card-title").textContent;
+        const precioTexto = card.querySelector(".price").textContent.replace(/\D/g,'');
+        const precio = parseInt(precioTexto); // convierte el texto a un numero
+        const img = card.querySelector("img").src;
+
+        const producto = {
+            nombre,
+            precio,
+            cantidad: 1,
+            img
+        };
+
+        carrito.push(producto);
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+
+        //sirve para actualizar el contador
+        cartCount.textContent = carrito.length;
+        });
+    });
+    });
+    </script>
+
     <footer class="bg-dark text-white text-center py-3 mt-5">
         <div class="container">
             <p>&copy; 2025 Huerto Hogar. Todos los derechos reservados.</p>
