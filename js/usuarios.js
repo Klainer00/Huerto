@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fila.innerHTML = `
                 <td>${usuario.id}</td>
                 <td>${usuario.rut}</td>
-                <td>${usuario.nombre + usuario.apellido}</td>
+                <td>${usuario.nombre +' '+ usuario.apellido}</td>
                 <td>${usuario.email}</td>
                 <td>${usuario.rol}</td>
                 <td>${usuario.email}</td>
@@ -122,8 +122,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const region = document.getElementById('region').value;
         const comuna = document.getElementById('comuna').value;
         const rol = document.getElementById('rol').value;
+        const psw = document.getElementById('psw').value;
+        
 
-        if (!rut || !nombre || !apellido || !email || !direccion || !region || !comuna || !rol) {
+        if (!rut || !nombre || !apellido || !email || !direccion || !region || !comuna || !rol || !psw) {
             alert('Todos los campos son requeridos, excepto la fecha de nacimiento.');
             return;
         }
