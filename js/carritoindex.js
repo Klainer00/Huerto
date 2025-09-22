@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const botones = document.querySelectorAll(".add-to-cart");
   const cartCount = document.getElementById("cart-count");
 
-  // cargar carrito existente
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   actualizarContador();
 
