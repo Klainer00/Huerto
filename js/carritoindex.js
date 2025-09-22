@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => {
       const card = btn.closest(".card");
       const nombre = card.querySelector(".card-title").textContent;
-      const precioTexto = card.querySelector(".price").textContent.replace(/\D/g, "");
+      const precioTexto = card.querySelector(".price").textContent.replace(/\D/g, "" );
       const precio = parseInt(precioTexto);
       const img = card.querySelector("img").src;
 
