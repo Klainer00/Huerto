@@ -18,8 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
         tablaBody.innerHTML = '';
         datosJSON.productos.forEach(producto => {
             const fila = document.createElement('tr');
-            const stockClass = producto.stock <= producto.stock_critico ? 'text-danger fw-bold' : '';
-            
+            let stockClass = '';
+            if (producto.stock <= producto.stock_critico) {
+                 stockClass = 'text-danger fw-bold';
+            } else 
+                {stockClass = '';
+            }
             fila.innerHTML = `
                 <td>${producto.codigo}</td>
                 <td>${producto.nombre}</td>
@@ -82,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             eliminarProducto(codigo);
         }
         if (target.classList.contains('btn-editar')) {
-            alert('La funcionalidad de editar aún no está implementada.');
+            alert('No funciona mi loco.');
         }
     });
 
