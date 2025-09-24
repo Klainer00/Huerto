@@ -1,12 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+     /*
+     FR001 - Manzanas Fuji
+    o FR002 - Naranjas Valencia
+    o FR003 - Plátanos Cavendish
+    o VR001 - Zanahorias Orgánicas
+    o VR002 - Espinacas Frescas
+    o VR003 - Pimientos Tricolores
+    o PO001 - Miel Orgánica
+    o PO003 - Quinua Orgánica
+    o PL001 - Leche Entera
+     */ 
     const products = [
         { id: 'FR001', name: 'Manzanas Fuji', price: 1200, image: 'img/manzanaFuji.png', stock: 150 },
+        { id: 'FR002', name: 'Naranjas Valencia', price: 1000, image: 'img/naranja_valencia.png', stock: 200 },
         { id: 'FR003', name: 'Plátanos Cavendish', price: 800, image: 'img/platano_caverdish.png', stock: 250 },
         { id: 'VR001', name: 'Zanahorias Orgánicas', price: 900, image: 'img/zanahorias.png', stock: 100 },
         { id: 'VR003', name: 'Pimientos Tricolores', price: 1500, image: 'img/pimienton.png', stock: 120 },
+        { id: 'PO001', name: 'Miel Orgánica', price: 2500, image: 'img/miel.png', stock: 50 },
         { id: 'PO003', name: 'Quinua Orgánica', price: 1500, image: 'img/quinua.png', stock: 0 },
-        { id: 'PL001', name: 'Leche Entera', price: 1000, image: 'img/leche.png', stock: 50 }
+        { id: 'PL001', name: 'Leche Entera', price: 1100, image: 'img/leche.png', stock: 180 }
+        
+
+
     ];
 
     let cart = JSON.parse(localStorage.getItem('huertoHogarCart')) || [];
