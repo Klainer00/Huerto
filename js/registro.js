@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const comuna = document.getElementById('comuna').value;
             const password = document.getElementById('psw').value;
 
-            if (!rutInput.value.trim() || !nombre || !apellido || !email || !direccion || !region || !comuna || password) {
+            if (!rutInput.value.trim() || !nombre || !apellido || !email || !direccion || !region || !comuna || !password) {
                 alert('Por favor, complete todos los campos requeridos.');
                 return;
             }
