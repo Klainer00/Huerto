@@ -20,8 +20,8 @@ function renderCarrito() {
         <td>${item.nombre}</td>
         <td>
           <input type="number" min="1" value="${item.cantidad}" 
-                 class="form-control form-control-sm" 
-                 onchange="cambiarCantidad(${index}, this.value)">
+              class="form-control form-control-sm" 
+              onchange="cambiarCantidad(${index}, this.value)">
         </td>
         <td>$${item.precio.toLocaleString()}</td>
         <td>$${subtotal.toLocaleString()}</td>
@@ -80,9 +80,9 @@ document.querySelectorAll(".add-to-cart").forEach(btn => {
     };
     addToCart(producto);
 
-    // ✅ Cambiar texto del botón temporalmente
+    //Cambiar texto del botón temporalmente
     const originalText = btn.textContent;
-    btn.textContent = "✅ Producto agregado";
+    btn.textContent = "Producto agregado";
     btn.disabled = true;
 
     setTimeout(() => {
