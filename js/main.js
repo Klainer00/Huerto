@@ -1,91 +1,108 @@
 document.addEventListener('DOMContentLoaded', () => {
-     /*
-     FR001 - Manzanas Fuji
-    o FR002 - Naranjas Valencia
-    o FR003 - Plátanos Cavendish
-    o VR001 - Zanahorias Orgánicas
-    o VR002 - Espinacas Frescas
-    o VR003 - Pimientos Tricolores
-    o PO001 - Miel Orgánica
-    o PO003 - Quinua Orgánica
-    o PL001 - Leche Entera
-     */ 
-    const products = [
-        { id: 'FR001', name: 'Manzanas Fuji', price: 1200, image: 'img/manzanaFuji.png', stock: 150 },
-        { id: 'FR002', name: 'Naranjas Valencia', price: 1000, image: 'img/naranja_valencia.png', stock: 200 },
-        { id: 'FR003', name: 'Plátanos Cavendish', price: 800, image: 'img/platano_caverdish.png', stock: 250 },
-        { id: 'VR001', name: 'Zanahorias Orgánicas', price: 900, image: 'img/zanahorias.png', stock: 100 },
-        { id: 'VR003', name: 'Pimientos Tricolores', price: 1500, image: 'img/pimienton.png', stock: 120 },
-        { id: 'PO001', name: 'Miel Orgánica', price: 2500, image: 'img/miel.png', stock: 50 },
-        { id: 'PO003', name: 'Quinua Orgánica', price: 1500, image: 'img/quinua.png', stock: 0 },
-        { id: 'PL001', name: 'Leche Entera', price: 1100, image: 'img/leche.png', stock: 180 }
-        
 
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-    ];
+   
+    const carritoBody = document.getElementById("carrito-body");
+    const totalEl = document.getElementById("total");
+    const toastEl = document.getElementById('liveToast');
+    const toastBody = document.getElementById('toast-body');
 
-    let cart = JSON.parse(localStorage.getItem('huertoHogarCart')) || [];
+    const guardarCarrito = () => {
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+    };
 
-    function updateCartCount() {
-        const cartCountElement = document.getElementById('cart-count');
-        if (cartCountElement) {
-            cartCountElement.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
-        }
-    }
-
-    function saveCart() {
-        localStorage.setItem('huertoHogarCart', JSON.stringify(cart));
-        updateCartCount();
-    }
-
-    function addToCart(productId) {
-        const product = products.find(p => p.id === productId);
-        if (!product || product.stock === 0) {
-            showToast('Producto no disponible o sin stock.');
+    const renderCarrito = () => {
+        if (!carritoBody || !totalEl) {
             return;
         }
-        const cartItem = cart.find(item => item.id === productId);
-        if (cartItem) {
-            if (cartItem.quantity < product.stock) {
-                cartItem.quantity++;
-            } else {
-                showToast('No puedes añadir más unidades (stock máximo alcanzado).');
-            }
+
+        carritoBody.innerHTML = "";
+        let total = 0;
+
+        if (carrito.length === 0) {
+            carritoBody.innerHTML = '<tr><td colspan="6" class="text-center">Tu carrito está vacío.</td></tr>';
         } else {
-            cart.push({ id: productId, name: product.name, price: product.price, image: product.image, quantity: 1 });
-        }
-        saveCart();
-        showToast(`${product.name} ha sido añadido al carrito`);
-    }
+            carrito.forEach((item, index) => {
+                const subtotal = item.precio * item.cantidad;
+                total += subtotal;
 
-    const productListContainer = document.getElementById('product-list');
-    if (productListContainer) {
-        products.forEach(product => {
-            const productCol = document.createElement('div');
-            productCol.className = 'col-lg-3 col-md-6';
-            productCol.innerHTML = `
-                <div class="card h-100 shadow-sm">
-                    <img src="${product.image}" class="card-img-top" alt="${product.name}">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">${product.name}</h5>
-                        <p class="card-text price">$${product.price} / unidad</p>
-                        ${product.stock > 0
-                            ? `<button class="btn btn-success add-to-cart" data-id="${product.id}">Añadir al Carrito</button>`
-                            : `<button class="btn btn-secondary" disabled>Sin Stock</button>`
-                        }
-                    </div>
-                </div>
-            `;
-            productListContainer.appendChild(productCol);
+                const row = `
+                  <tr>
+                    <td><img src="${item.img}" alt="${item.nombre}" style="width: 50px; height: 50px; object-fit: cover;"></td>
+                    <td class="align-middle">${item.nombre}</td>
+                    <td class="align-middle">
+                      <input type="number" min="1" value="${item.cantidad}" 
+                             class="form-control form-control-sm mx-auto" style="width: 60px;"
+                             onchange="cambiarCantidad(${index}, this.value)">
+                    </td>
+                    <td class="align-middle">$${item.precio.toLocaleString()}</td>
+                    <td class="align-middle fw-bold">$${subtotal.toLocaleString()}</td>
+                    <td class="align-middle">
+                      <button class="btn btn-sm btn-danger" onclick="eliminarDelCarrito(${index})">
+                        <i class="bi bi-trash"></i> Eliminar
+                      </button>
+                    </td>
+                  </tr>
+                `;
+                carritoBody.innerHTML += row;
+            });
+        }
+        totalEl.textContent = `$${total.toLocaleString()}`;
+        guardarCarrito();
+    };
+    const addToCart = (producto) => {
+        const existente = carrito.find(item => item.id === producto.id);
+
+        if (existente) {
+            existente.cantidad++;
+        } else {
+            carrito.unshift({ ...producto, cantidad: 1 }); // Añade al inicio para visibilidad
+        }
+        
+        showToast(`"${producto.nombre}" fue agregado al carrito.`);
+        renderCarrito();
+    };
+
+    const showToast = (message, type = 'success') => {
+        if (toastEl && toastBody) {
+            toastBody.textContent = message;
+            toastEl.className = `toast align-items-center text-bg-${type} border-0`;
+            const toast = new bootstrap.Toast(toastEl);
+            toast.show();
+        }
+    };
+    window.cambiarCantidad = (index, nuevaCantidad) => {
+        const cantidad = parseInt(nuevaCantidad);
+        if (cantidad > 0) {
+            carrito[index].cantidad = cantidad;
+        } else {
+            eliminarDelCarrito(index);
+        }
+        renderCarrito();
+    };
+
+    window.eliminarDelCarrito = (index) => {
+        const nombreProducto = carrito[index].nombre;
+        carrito.splice(index, 1);
+        showToast(`"${nombreProducto}" fue eliminado del carrito.`, 'danger');
+        renderCarrito();
+    };
+
+    document.querySelectorAll(".add-to-cart").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const card = btn.closest(".card");
+            if (card) {
+                const producto = {
+                    id: btn.dataset.id,
+                    nombre: card.querySelector(".card-title").textContent,
+                    precio: parseInt(card.querySelector(".price").textContent.replace(/[$./ a-zA-Z]/g, '')),
+                    img: card.querySelector("img").src,
+                };
+                addToCart(producto);
+            }
         });
-    }
-
-    document.body.addEventListener('click', (event) => {
-        if (event.target.classList.contains('add-to-cart')) {
-            const productId = event.target.getAttribute('data-id');
-            addToCart(productId);
-        }
     });
-    
-    updateCartCount();
+
+    renderCarrito();
 });

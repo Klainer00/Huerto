@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    let datosJSON = { usuarios: [] };
+    
+    let datosJSON = JSON.parse(localStorage.getItem('usuariosAdmin')) || { usuarios: [] };
+    
     const tablaBody = document.getElementById('tabla-usuarios');
     const paginacionContainer = document.getElementById('paginacion');
     let paginaActual = 1;
@@ -13,6 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const comunaSelect = document.getElementById('comuna');
     const editRegionSelect = document.getElementById('edit-region');
     const editComunaSelect = document.getElementById('edit-comuna');
+
+
+    const guardarUsuarios = () => {
+        localStorage.setItem('usuariosAdmin', JSON.stringify(datosJSON));
+    };
 
     function cargarRegiones(selectElement) {
         selectElement.innerHTML = '<option value="">Seleccione una región</option>';
@@ -44,14 +51,20 @@ document.addEventListener('DOMContentLoaded', () => {
     regionSelect.addEventListener('change', () => cargarComunas(regionSelect.value, comunaSelect));
     editRegionSelect.addEventListener('change', () => cargarComunas(editRegionSelect.value, editComunaSelect));
 
+ 
     function cargarUsuarios() {
-        fetch('../data/usuarios.json')
-            .then(response => response.json())
-            .then(data => {
-                datosJSON = data;
-                mostrarPagina(1);
-            })
-            .catch(error => console.error('Error al cargar los usuarios:', error));
+        if (datosJSON.usuarios.length > 0) {
+            mostrarPagina(1);
+        } else {
+            fetch('../data/usuarios.json')
+                .then(response => response.json())
+                .then(data => {
+                    datosJSON = data;
+                    guardarUsuarios(); 
+                    mostrarPagina(1);
+                })
+                .catch(error => console.error('Error al cargar los usuarios iniciales:', error));
+        }
     }
 
     function mostrarPagina(pagina) {
@@ -74,7 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>${usuario.nombre +' '+ usuario.apellido}</td>
                 <td>${usuario.email}</td>
                 <td>${usuario.rol}</td>
-                <td>${usuario.email}</td>
                 <td>${usuario.region}</td>
                 <td>${usuario.comuna}</td>
                 <td>${usuario.direccion}</td>
@@ -149,6 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         datosJSON.usuarios.push(nuevoUsuario);
+        guardarUsuarios();
         const totalPaginas = Math.ceil(datosJSON.usuarios.length / filasPorPagina);
         mostrarPagina(totalPaginas);
         modalAgregar.hide();
@@ -174,6 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ...datosJSON.usuarios[userIndex], 
                 rut, nombre, apellido, email, fecha_nacimiento, direccion, region, comuna, rol
             };
+            guardarUsuarios(); 
             mostrarPagina(paginaActual);
             modalEditar.hide();
         }
@@ -182,6 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function eliminarUsuario(idUsuario) {
         if (confirm(`¿Estás seguro de eliminar al usuario con ID ${idUsuario}?`)) {
             datosJSON.usuarios = datosJSON.usuarios.filter(u => u.id != idUsuario);
+            guardarUsuarios(); 
             if ((paginaActual - 1) * filasPorPagina >= datosJSON.usuarios.length && paginaActual > 1) {
                 paginaActual--;
             }
