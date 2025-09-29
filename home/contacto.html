@@ -1,38 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Huerto Hogar - Contacto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="stylesheet" href="../css/index.css">
     <link rel="icon" href="img/Logo-convertido-a-pequeño-Photoroom.png">
 </head>
+
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm sticky-top">
         <div class="container">
             <a class="navbar-brand logo" href="index.html">
+                <img src="../img/Logo-convertido-a-pequeño-Photoroom.png" alt="Logo HuertoHogar" class="logo-img">
             </a>
-                <img src="img/Logo-convertido-a-pequeño-Photoroom.png" alt="Logo HuertoHogar" class="logo-img">
-                HuertoHogar
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-                </ul>
-                <div class="d-flex">
-                    <a href="pagina/registro.html" class="btn btn-outline-secondary me-2">Registro</a>
-                    <a href="pagina/inicio_sesion.html" class="btn btn-outline-secondary me-2">Iniciar Sesión</a>
-                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCarrito">
-                        🛒 Carrito
-                    </button>
-                </div>
+        <ul class="navbar-nav ms-auto" id="navbar-items-container">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="blogs.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+                     
+
             </div>
         </div>
     </nav>
@@ -52,13 +50,9 @@
 
         <section>
             <h2 class="text-center mb-4">Encuéntranos en Google Maps</h2>
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.0861434580456!2d-73.04957642427325!3d-36.82714597226842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9669b5b4c7b8e7ff%3A0x6bbff16a2c8a8e3!2sPlaza%20de%20Armas%20de%20Concepci%C3%B3n!5e0!3m2!1ses-419!2scl!4v1695920412345!5m2!1ses-419!2scl" 
-                width="100%" 
-                height="450" 
-                style="border:0;" 
-                allowfullscreen 
-                loading="lazy" 
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.0861434580456!2d-73.04957642427325!3d-36.82714597226842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9669b5b4c7b8e7ff%3A0x6bbff16a2c8a8e3!2sPlaza%20de%20Armas%20de%20Concepci%C3%B3n!5e0!3m2!1ses-419!2scl!4v1695920412345!5m2!1ses-419!2scl"
+                width="100%" height="450" style="border:0;" allowfullscreen loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade">
             </iframe>
         </section>
@@ -80,8 +74,12 @@
                         <table class="table table-bordered table-hover text-center">
                             <thead class="table-success">
                                 <tr>
-                                    <th>Imagen</th><th>Producto</th><th>Cantidad</th>
-                                    <th>Precio Unitario</th><th>Subtotal</th><th>Acciones</th>
+                                    <th>Imagen</th>
+                                    <th>Producto</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio Unitario</th>
+                                    <th>Subtotal</th>
+                                    <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody id="carrito-body"></tbody>
@@ -93,7 +91,8 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" data-bs-dismiss="modal">Seguir Comprando</button>
-                    <button class="btn btn-success" id="btnFinalizarCompra"><i class="bi bi-bag-check-fill"></i> Finalizar Compra</button>
+                    <button class="btn btn-success" id="btnFinalizarCompra"><i class="bi bi-bag-check-fill"></i>
+                        Finalizar Compra</button>
                 </div>
             </div>
         </div>
@@ -109,6 +108,13 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+
+    <script src="../js/login-auth.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/carga-region-comuna.js"></script>
+    <script src="../js/regiones-comunas.js"></script>
+    <script src="../js/checkrut.js"></script>
+    <script src="../js/registro.js"></script>
 </body>
+
 </html>

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const regionSelect = document.getElementById('region');
-    const comunaSelect = document.getElementById('comuna');
+    const regionSelect = document.getElementById('reg-region');
+    const comunaSelect = document.getElementById('reg-comuna');
     
     
     const editRegionSelect = document.getElementById('edit-region');

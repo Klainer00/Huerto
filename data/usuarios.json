@@ -6,12 +6,13 @@
       "nombre": "Pedro",
       "apellido": "Fernández",
       "fecha_nacimiento": "1986-02-22",
-      "email": "pedro.fernández@profesor.duoc.cl",
+      "email": "admin@gmail.com",
       "direccion": "Pasaje Los Aromos 1174",
       "region": "Biobío",
       "comuna": "Talcahuano",
       "rol": "Administrador",
-      "estado": "Activo"
+      "estado": "Activo",
+      "password": "admin123"
     },
     {
       "id": 2,
@@ -24,7 +25,8 @@
       "region": "Arica y Parinacota",
       "comuna": "General Lagos",
       "rol": "Cliente",
-      "estado": "Activo"
+      "estado": "Activo",
+      "password": "ricardo123"
     },
     {
       "id": 3,
@@ -37,7 +39,8 @@
       "region": "Atacama",
       "comuna": "Diego de Almagro",
       "rol": "Cliente",
-      "estado": "Activo"
+      "estado": "Activo",
+      "password": "fernando123"
     },
     {
       "id": 4,
@@ -50,7 +53,8 @@
       "region": "Valparaíso",
       "comuna": "Casablanca",
       "rol": "Cliente",
-      "estado": "Activo"
+      "estado": "Activo",
+      "password": "alejandro123"
     },
     {
       "id": 5,
@@ -63,7 +67,8 @@
       "region": "Tarapacá",
       "comuna": "Alto Hospicio",
       "rol": "Cliente",
-      "estado": "Activo"
+      "estado": "Activo",
+      "password": "paula123"
     },
     {
       "id": 6,
@@ -76,7 +81,8 @@
       "region": "Coquimbo",
       "comuna": "Río Hurtado",
       "rol": "Cliente",
-      "estado": "Activo"
+      "estado": "Activo",
+      "password": "alejandro123"
     },
     {
       "id": 7,
@@ -89,7 +95,8 @@
       "region": "Coquimbo",
       "comuna": "Paiguano",
       "rol": "Cliente",
-      "estado": "Pendiente"
+      "estado": "Pendiente",
+      "password": "juan123"
     },
     {
       "id": 8,
@@ -102,7 +109,8 @@
       "region": "Biobío",
       "comuna": "Mulchén",
       "rol": "Cliente",
-      "estado": "Activo"
+      "estado": "Activo",
+      "password": "ana123"
     },
     {
       "id": 9,
@@ -115,7 +123,8 @@
       "region": "Tarapacá",
       "comuna": "Pozo Almonte",
       "rol": "Cliente",
-      "estado": "Activo"
+      "estado": "Activo",
+      "password": "jorge123"
     },
     {
       "id": 10,
@@ -128,7 +137,8 @@
       "region": "Metropolitana de Santiago",
       "comuna": "La Cisterna",
       "rol": "Cliente",
-      "estado": "Activo"
+      "estado": "Activo",
+      "password": "pedro123"
     },
     {
       "id": 11,
@@ -141,384 +151,8 @@
       "region": "Arica y Parinacota",
       "comuna": "Camarones",
       "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 12,
-      "rut": "10.412.118-4",
-      "nombre": "Valentina",
-      "apellido": "Morales",
-      "fecha_nacimiento": "1981-03-02",
-      "email": "valentina.morales@profesor.duoc.cl",
-      "direccion": "Arturo Prat 1534",
-      "region": "Antofagasta",
-      "comuna": "Antofagasta",
-      "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 13,
-      "rut": "97.898.81-4",
-      "nombre": "Alejandro",
-      "apellido": "Molina",
-      "fecha_nacimiento": "1982-02-11",
-      "email": "alejandro.molina@profesor.duoc.cl",
-      "direccion": "Av. Siempre Viva 1573",
-      "region": "Antofagasta",
-      "comuna": "Taltal",
-      "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 14,
-      "rut": "91.574.41-6",
-      "nombre": "Jorge",
-      "apellido": "Vargas",
-      "fecha_nacimiento": "1991-09-13",
-      "email": "jorge.vargas@profesor.duoc.cl",
-      "direccion": "El Roble 1993",
-      "region": "Valparaíso",
-      "comuna": "San Felipe",
-      "rol": "Administrador",
-      "estado": "Inactivo"
-    },
-    {
-      "id": 15,
-      "rut": "18.994.101-1",
-      "nombre": "María",
-      "apellido": "Rodríguez",
-      "fecha_nacimiento": "1994-05-21",
-      "email": "maría.rodríguez@gmail.com",
-      "direccion": "Av. Siempre Viva 1192",
-      "region": "Coquimbo",
-      "comuna": "Illapel",
-      "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 16,
-      "rut": "18.539.477-4",
-      "nombre": "Ana",
-      "apellido": "Castro",
-      "fecha_nacimiento": "1974-04-14",
-      "email": "ana.castro@duoc.cl",
-      "direccion": "Los Conquistadores 1307",
-      "region": "Arica y Parinacota",
-      "comuna": "Arica",
-      "rol": "Cliente",
-      "estado": "Pendiente"
-    },
-    {
-      "id": 17,
-      "rut": "10.643.944-0",
-      "nombre": "Antonia",
-      "apellido": "Reyes",
-      "fecha_nacimiento": "1973-03-20",
-      "email": "antonia.reyes@gmail.com",
-      "direccion": "Av. Siempre Viva 1831",
-      "region": "Biobío",
-      "comuna": "Lota",
-      "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 18,
-      "rut": "21.960.067-6",
-      "nombre": "Laura",
-      "apellido": "García",
-      "fecha_nacimiento": "1981-06-26",
-      "email": "laura.garcía@profesor.duoc.cl",
-      "direccion": "El Roble 1102",
-      "region": "Tarapacá",
-      "comuna": "Camiña",
-      "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 19,
-      "rut": "20.230.718-2",
-      "nombre": "Andrés",
-      "apellido": "Martínez",
-      "fecha_nacimiento": "1989-10-14",
-      "email": "andrés.martínez@duoc.cl",
-      "direccion": "Calle Falsa 347",
-      "region": "Biobío",
-      "comuna": "Florida",
-      "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 20,
-      "rut": "22.824.262-9",
-      "nombre": "Andrés",
-      "apellido": "García",
-      "fecha_nacimiento": "1990-02-07",
-      "email": "andrés.garcía@gmail.com",
-      "direccion": "Arturo Prat 1957",
-      "region": "Arica y Parinacota",
-      "comuna": "Arica",
-      "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 21,
-      "rut": "95.867.60-9",
-      "nombre": "María",
-      "apellido": "Rojas",
-      "fecha_nacimiento": "1974-02-06",
-      "email": "maría.rojas@gmail.com",
-      "direccion": "Calle Falsa 1280",
-      "region": "Atacama",
-      "comuna": "Alto del Carmen",
-      "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 22,
-      "rut": "77.141.99-K",
-      "nombre": "Ana",
-      "apellido": "García",
-      "fecha_nacimiento": "1984-12-14",
-      "email": "ana.garcía@profesor.duoc.cl",
-      "direccion": "Los Conquistadores 538",
-      "region": "Metropolitana de Santiago",
-      "comuna": "Curacaví",
-      "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 23,
-      "rut": "11.101.190-0",
-      "nombre": "Luis",
-      "apellido": "García",
-      "fecha_nacimiento": "1992-11-01",
-      "email": "luis.garcía@gmail.com",
-      "direccion": "El Roble 1831",
-      "region": "Tarapacá",
-      "comuna": "Colchane",
-      "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 24,
-      "rut": "22.902.425-6",
-      "nombre": "Catalina",
-      "apellido": "Molina",
-      "fecha_nacimiento": "2001-12-21",
-      "email": "catalina.molina@gmail.com",
-      "direccion": "El Roble 718",
-      "region": "Valparaíso",
-      "comuna": "Putaendo",
-      "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 25,
-      "rut": "92.571.56-7",
-      "nombre": "Javier",
-      "apellido": "Soto",
-      "fecha_nacimiento": "1998-01-24",
-      "email": "javier.soto@gmail.com",
-      "direccion": "Calle Falsa 131",
-      "region": "Valparaíso",
-      "comuna": "Valparaíso",
-      "rol": "Cliente",
-      "estado": "Inactivo"
-    },
-    {
-      "id": 26,
-      "rut": "20.585.896-K",
-      "nombre": "Luis",
-      "apellido": "Reyes",
-      "fecha_nacimiento": "1981-01-05",
-      "email": "luis.reyes@duoc.cl",
-      "direccion": "Pasaje Los Aromos 1377",
-      "region": "Coquimbo",
-      "comuna": "Monte Patria",
-      "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 27,
-      "rut": "13.330.461-8",
-      "nombre": "Javier",
-      "apellido": "Castro",
-      "fecha_nacimiento": "1981-01-26",
-      "email": "javier.castro@duoc.cl",
-      "direccion": "Calle Falsa 899",
-      "region": "Arica y Parinacota",
-      "comuna": "Arica",
-      "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 28,
-      "rut": "17.305.092-6",
-      "nombre": "Valeria",
-      "apellido": "Pérez",
-      "fecha_nacimiento": "1970-12-20",
-      "email": "valeria.pérez@profesor.duoc.cl",
-      "direccion": "Calle Falsa 958",
-      "region": "Metropolitana de Santiago",
-      "comuna": "Peñalolén",
-      "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 29,
-      "rut": "11.795.638-6",
-      "nombre": "Gabriela",
-      "apellido": "Castillo",
-      "fecha_nacimiento": "1986-10-06",
-      "email": "gabriela.castillo@duoc.cl",
-      "direccion": "Arturo Prat 301",
-      "region": "Tarapacá",
-      "comuna": "Alto Hospicio",
-      "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 30,
-      "rut": "18.816.972-5",
-      "nombre": "José",
-      "apellido": "González",
-      "fecha_nacimiento": "1989-02-19",
-      "email": "josé.gonzález@gmail.com",
-      "direccion": "Pasaje Los Aromos 378",
-      "region": "Coquimbo",
-      "comuna": "Coquimbo",
-      "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 31,
-      "rut": "11.162.126-0",
-      "nombre": "Jorge",
-      "apellido": "Castro",
-      "fecha_nacimiento": "1983-03-27",
-      "email": "jorge.castro@gmail.com",
-      "direccion": "Los Conquistadores 180",
-      "region": "Tarapacá",
-      "comuna": "Pozo Almonte",
-      "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 32,
-      "rut": "18.638.153-8",
-      "nombre": "Valentina",
-      "apellido": "Molina",
-      "fecha_nacimiento": "1978-04-14",
-      "email": "valentina.molina@duoc.cl",
-      "direccion": "Los Conquistadores 1669",
-      "region": "Tarapacá",
-      "comuna": "Iquique",
-      "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 33,
-      "rut": "22.523.955-K",
-      "nombre": "Camila",
-      "apellido": "García",
-      "fecha_nacimiento": "1994-03-29",
-      "email": "camila.garcía@gmail.com",
-      "direccion": "Arturo Prat 934",
-      "region": "Atacama",
-      "comuna": "Copiapó",
-      "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 34,
-      "rut": "10.377.745-1",
-      "nombre": "Sofía",
-      "apellido": "Reyes",
-      "fecha_nacimiento": "1984-01-31",
-      "email": "sofía.reyes@profesor.duoc.cl",
-      "direccion": "Pasaje Los Aromos 356",
-      "region": "Antofagasta",
-      "comuna": "Sierra Gorda",
-      "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 35,
-      "rut": "23.446.045-4",
-      "nombre": "Francisco",
-      "apellido": "Castillo",
-      "fecha_nacimiento": "1976-07-12",
-      "email": "francisco.castillo@gmail.com",
-      "direccion": "Calle Falsa 949",
-      "region": "Biobío",
-      "comuna": "Lota",
-      "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 36,
-      "rut": "24.908.906-6",
-      "nombre": "Ana",
-      "apellido": "Rodríguez",
-      "fecha_nacimiento": "1987-02-08",
-      "email": "ana.rodríguez@profesor.duoc.cl",
-      "direccion": "El Roble 1923",
-      "region": "Valparaíso",
-      "comuna": "Quillota",
-      "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 37,
-      "rut": "21.130.727-5",
-      "nombre": "Fernando",
-      "apellido": "García",
-      "fecha_nacimiento": "1983-02-18",
-      "email": "fernando.garcía@gmail.com",
-      "direccion": "Pasaje Los Aromos 997",
-      "region": "Biobío",
-      "comuna": "Santa Bárbara",
-      "rol": "Cliente",
-      "estado": "Activo"
-    },
-    {
-      "id": 38,
-      "rut": "20.060.801-1",
-      "nombre": "Miguel",
-      "apellido": "López",
-      "fecha_nacimiento": "1985-11-03",
-      "email": "miguel.lópez@duoc.cl",
-      "direccion": "El Roble 1804",
-      "region": "Arica y Parinacota",
-      "comuna": "Camarones",
-      "rol": "Cliente",
-      "estado": "Pendiente"
-    },
-    {
-      "id": 39,
-      "rut": "24.672.533-6",
-      "nombre": "Ana",
-      "apellido": "Silva",
-      "fecha_nacimiento": "1981-06-11",
-      "email": "ana.silva@profesor.duoc.cl",
-      "direccion": "Arturo Prat 754",
-      "region": "Tarapacá",
-      "comuna": "Camiña",
-      "rol": "Administrador",
-      "estado": "Pendiente"
-    },
-    {
-      "id": 40,
-      "rut": "10.965.560-4",
-      "nombre": "Alejandro",
-      "apellido": "González",
-      "fecha_nacimiento": "1982-11-09",
-      "email": "alejandro.gonzález@duoc.cl",
-      "direccion": "Arturo Prat 1334",
-      "region": "Atacama",
-      "comuna": "Vallenar",
-      "rol": "Cliente",
-      "estado": "Activo"
+      "estado": "Activo",
+      "password": "javier123"
     }
   ]
 }
